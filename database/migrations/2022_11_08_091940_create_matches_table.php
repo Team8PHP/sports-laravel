@@ -24,9 +24,9 @@ return new class extends Migration
             $table->foreign('comp_id')->references('id')->on('competetions');
             $table->string('stage');
             $table->date('date');
-            $table->number('matchday');
-            $table->number('home_score');
-            $table->number('away_score');
+            $table->integer('matchday');
+            $table->integer('home_score');
+            $table->integer('away_score');
             $table->timestamps();
         });
     }

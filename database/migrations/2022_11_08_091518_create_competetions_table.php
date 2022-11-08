@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->number('current_matchday');
+            $table->integer('current_matchday');
             $table->timestamps();
         });
     }
