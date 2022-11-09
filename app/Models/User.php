@@ -42,10 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function favourites()
-    {
-        return $this->hasMany(Favourite::class);
+    public function clubs(){
+    return $this->belongsToMany(
+        Club::class,
+        'favourites',
+        'user_id',
+        'club_id');
     }
-
-    
 }

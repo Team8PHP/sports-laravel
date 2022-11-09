@@ -9,17 +9,20 @@ class Club extends Model
 {
     use HasFactory;
 
-    public function favourites()
-    {
-        return $this->belongsToMany(Favourite::class);
-    }
-
     public function players()
     {
-        return $this->belongsToMany(Player::class);
+        return $this->hasMany(Player::class);
     }
 
     public function leagueStandings(){
         return $this->belongsTo(LeagueStanding::class);
     }
+
+    public function users(){
+        return $this->belongsToMany(
+            User::class,
+            'favourites',
+            'club_id',
+            'user_id');
+        }
 }
