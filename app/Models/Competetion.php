@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Competetion extends Model
 {
     use HasFactory;
+
+    
 }

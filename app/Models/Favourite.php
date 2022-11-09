@@ -16,6 +16,6 @@ class Favourite extends Model
 
     public function clubs()
     {
-        return $this->hasmany(Club::class);
+        return $this->belongsToMany(Club::class);
     }
 }
