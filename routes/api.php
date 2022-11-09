@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\CompetitionsController;
+use App\Http\Controllers\Api\FavouritesController;
+use App\Http\Controllers\Api\GroupStandingsController;
+use App\Http\Controllers\Api\LeaguesController;
+use App\Http\Controllers\Api\LeagueStandingsController;
+use App\Http\Controllers\Api\ScorersController;
+use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +24,15 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('leagues', [LeaguesController::class,'index']);
+
+Route::get('league/{id}', [LeagueStandingsController::class,'show']);
+
+Route::get('competition/{id}', [CompetitionsController::class,'show']);
+
+Route::get('scorers/{id}', [ScorersController::class,'show']);
+
+Route::get('group/{id}', [GroupStandingsController::class,'show']);
+
+Route::get('favourites/{id}', [FavouritesController::class,'show']);

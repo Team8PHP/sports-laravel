@@ -19,4 +19,7 @@ class Club extends Model
         return $this->belongsToMany(Player::class);
     }
 
+    public function leagueStandings(){
+        return $this->belongsTo(LeagueStanding::class);
+    }
 }
