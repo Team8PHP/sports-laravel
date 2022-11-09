@@ -5,24 +5,28 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\LeagueStandingsResource;
 use App\Models\Club;
+use App\Models\Competetion;
 use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class LeagueStandingsController extends Controller
 {
-    public function show($league_id)
+    public function show($id)
     {
-        $league = DB::table('league_standings')->where('comp_id', '=', $league_id)->get();
-        // dd($league);
-        // $club = Club::find(1);
-        // dd($club);
+        $competition = Competetion::find($id);
+        $league = DB::table('league_standings')->where('comp_id', '=', $id)->get();
 
-        // $league = LeagueStanding::find($league_id);
-
-        // dd($league);
-        // dd($league->club_id);
-
+        // $anything= $competition->pivot->goals;
+        // return [
+        //     'competition'=>$competition,
+        //     'league'=>$league,
+        //     'club'=>$competition->clubs,
+        //     // 'pivot'=>$anything,
+        // ];
+        // $league = LeagueStanding::find($id);
+return $competition;
+        // return $competition;
         return LeagueStandingsResource::collection($league);
     }
 }

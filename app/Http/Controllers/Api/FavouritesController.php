@@ -15,10 +15,8 @@ class FavouritesController extends Controller
     public function show($user_id)
     {
         $user = User::find($user_id);
-        // dd($user->favourites);
-        // dd($user);
-        // dd($user->favourites);
 
-        return $user->clubs;
+
+        return FavouritesResource::collection($user->clubs);
     }
 }

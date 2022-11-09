@@ -16,9 +16,8 @@ class FavouritesResource extends JsonResource
     {
         return  [
             'id'=>$this->id,
-            'user_id'=>$this->user_id,
-            'club_id'=>$this->club_id,
-            'club'=>new ClubsResource($this->club)
+            'club_name'=>$this->name,
+            'club_image'=>$this->image
             ];
     }
 }

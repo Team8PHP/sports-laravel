@@ -18,9 +18,11 @@ class LeagueStandingsResource extends JsonResource
     {
 
         return [
-            'position'=>$this->position,
-            'goals'=>$this->goals,
-            'club'=>new ClubResource($this->club)
+            'position'=>$this->position
+          
+            // 'position'=>$this->position,
+            // 'goals'=>$this->goals,
+            // 'club'=>new ClubResource($this->club)
         ];
     }
 }

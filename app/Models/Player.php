@@ -13,4 +13,14 @@ class Player extends Model
     {
         return $this->belongsTo(Club::class);
     }
+
+    public function competition()
+    {
+        return $this->belongsToMany(
+            Competetion::class,
+            'scorers',
+            'player_id',
+            'comp_id'
+        );
+    }
 }
