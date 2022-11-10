@@ -36,3 +36,5 @@ Route::get('scorers/{id}', [ScorersController::class,'show']);
 Route::get('group/{id}', [GroupStandingsController::class,'show']);
 
 Route::get('favourites/{id}', [FavouritesController::class,'show']);
+
+Route::get('matches/{id}', [FavouritesController::class,'show']);

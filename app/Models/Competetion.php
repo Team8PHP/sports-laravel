@@ -18,6 +18,24 @@ class Competetion extends Model
             'club_id'
         );
     }
+    public function matches_homeclub()
+    {
+        return $this->belongsToMany(
+            Club::class,
+            'matches',
+            'comp_id',
+            'home_id'
+        );
+    }
+    public function matches_awayclub()
+    {
+        return $this->belongsToMany(
+            Club::class,
+            'matches',
+            'comp_id',
+            'away_id'
+        );
+    }
 
     public function clubs_leagues()
     {
