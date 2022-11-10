@@ -37,4 +37,8 @@ Route::get('group/{id}', [GroupStandingsController::class,'show']);
 
 Route::get('favourites/{id}', [FavouritesController::class,'show']);
 
+Route::post('favourites', [FavouritesController::class,'store']);
+
+Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
+
 Route::get('matches/{id}', [FavouritesController::class,'show']);

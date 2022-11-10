@@ -19,4 +19,18 @@ class FavouritesController extends Controller
 
         return FavouritesResource::collection($user->clubs);
     }
+    
+    public function store(){
+        $favorite = favourite::create([
+            'user_id' => request()->user_id,
+            'club_id' => request()->club_id,
+        ]);
+return $favorite;
+    }
+
+    public function destroy($id){
+        $favorite= Favourite::find($id);
+        $favorite->delete();
+        return $favorite;
+    }
 }
