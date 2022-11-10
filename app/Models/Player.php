@@ -9,10 +9,10 @@ class Player extends Model
 {
     use HasFactory;
 
-    public function club()
-    {
-        return $this->belongsToMany(Club::class);
-    }
+    // public function club()
+    // {
+    //     return $this->belongsToMany(Club::class);
+    // }
 
     public function competition()
     {
@@ -22,5 +22,17 @@ class Player extends Model
             'player_id',
             'comp_id'
         )->withPivot('goals');
+    }
+
+
+    public function club()
+    {
+        return $this->belongsToMany(
+            Club::class,
+            'scorers',
+            'player_id',
+            'club_id'
+
+        );
     }
 }

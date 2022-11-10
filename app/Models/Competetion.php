@@ -36,7 +36,7 @@ class Competetion extends Model
             'group_standings',
             'comp_id',
             'club_id'
-        )->withPivot('goals', 'position');
+        )->withPivot('goals', 'position','group_name');
     }
 
     public function player()

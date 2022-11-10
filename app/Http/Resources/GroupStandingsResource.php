@@ -18,7 +18,8 @@ class GroupStandingsResource extends JsonResource
             'club_name'=>$this->name,
             'club_image'=>$this->image,
             'position'=>$this->pivot->position,
-            'goals'=>$this->pivot->goals
+            'goals'=>$this->pivot->goals,
+            'group'=>$this->pivot->group_name
         ];
     }
 }

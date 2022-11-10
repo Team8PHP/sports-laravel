@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('player_id');
             $table->foreign('player_id')->references('id')->on('players');
+            $table->unsignedBigInteger('club_id');
+            $table->foreign('club_id')->references('id')->on('clubs');
             $table->unsignedBigInteger('comp_id');
             $table->foreign('comp_id')->references('id')->on('competetions');
             $table->integer('goals');

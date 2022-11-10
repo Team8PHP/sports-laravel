@@ -26,6 +26,7 @@ class GroupStandingsController extends Controller
 
         // return $competition;
         // return LeagueStandingsResource::collection($competition->clubs);
+        // return $competition;
         return GroupStandingsResource::collection($competition->clubs_groups);
     }
 }

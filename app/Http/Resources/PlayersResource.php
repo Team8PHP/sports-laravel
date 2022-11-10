@@ -18,7 +18,7 @@ class PlayersResource extends JsonResource
             'name'=>$this->name,
             'nationality'=>$this->nationality,
             'goals'=>$this->pivot->goals,
-            'club'=>$this->club->name
+            'club'=>$this->club
         ];
     }
 }

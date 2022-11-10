@@ -15,9 +15,9 @@ class LeaguesResource extends JsonResource
     public function toArray($request)
     {
         return [
-        'id'=>$this->id,
-        'club_name'=>$this->name,
-        'club_image'=>$this->image,
+            'id' => $this->id,
+            'club_name' => $this->name,
+            'club_image' => $this->image,
         ];
     }
 }

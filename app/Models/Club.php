@@ -9,10 +9,15 @@ class Club extends Model
 {
     use HasFactory;
 
-    public function players()
-    {
-        return $this->belongsToMany(Player::class);
-    }
+    // public function players()
+    // {
+    //     return $this->belongsToMany(
+    //         Player::class,
+    //         'scorers',
+    //         'club_id',
+    //         ''
+    //     );
+    // }
 
     // public function leagueStandings()
     // {
@@ -40,27 +45,38 @@ class Club extends Model
         );
     }
 
-        public function comp_league()
-        {
-            return $this->belongsToMany(
-                Competetion::class,
-                'league_standings',
-                'club_id',
-                'comp_id'
-            )->withPivot('goals', 'position');
-        }
+    public function comp_league()
+    {
+        return $this->belongsToMany(
+            Competetion::class,
+            'league_standings',
+            'club_id',
+            'comp_id'
+        )->withPivot('goals', 'position');
+    }
 
-        public function comp_groups()
-        {
-            return $this->belongsToMany(
-                Competetion::class,
-                'group_standings',
-                'club_id',
-                'comp_id'
-            )->withPivot('goals', 'position');
-        }
+    public function comp_groups()
+    {
+        return $this->belongsToMany(
+            Competetion::class,
+            'group_standings',
+            'club_id',
+            'comp_id'
+        )->withPivot('goals', 'position', 'group_name');
+    }
 
-        public function group_standing(){
-            return $this->belongsTo('group_standings');
-        }
+    public function group_standing()
+    {
+        return $this->belongsTo('group_standings');
+    }
+
+    public function players()
+    {
+        return $this->belongsToMany(
+            players::class,
+            'scorers',
+            'club_id',
+            'player_id',
+        );
+    }
 }
