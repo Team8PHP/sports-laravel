@@ -11,7 +11,7 @@ class Club extends Model
 
     public function players()
     {
-        return $this->hasMany(Player::class);
+        return $this->belongsToMany(Player::class);
     }
 
     // public function leagueStandings()
@@ -58,5 +58,9 @@ class Club extends Model
                 'club_id',
                 'comp_id'
             )->withPivot('goals', 'position');
+        }
+
+        public function group_standing(){
+            return $this->belongsTo('group_standings');
         }
 }

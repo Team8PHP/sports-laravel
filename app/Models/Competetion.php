@@ -48,4 +48,8 @@ class Competetion extends Model
             'player_id'
         )->withPivot('goals');
     }
+
+    public function matches(){
+        return $this->hasMany('matches');
+    }
 }
