@@ -9,6 +9,13 @@ class Club extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'tla',
+        'venue',
+        'image',
+    ];
+
     // public function players()
     // {
     //     return $this->belongsToMany(

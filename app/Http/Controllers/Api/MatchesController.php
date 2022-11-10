@@ -10,8 +10,7 @@ use App\Models\Matches;
 class MatchesController extends Controller
 {   public function show($date){
 
-    $anyt= Matches::where('date',$date)->get();
-    
-    return   $anyt;
+    $match = Matches::where('date',$date)->with('competetion')->get();
+    return $match;
 }
 }

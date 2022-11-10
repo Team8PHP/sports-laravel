@@ -9,4 +9,9 @@ class Scorer extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'player_id',
+        'comp_id',
+        'goals',
+    ];
 }

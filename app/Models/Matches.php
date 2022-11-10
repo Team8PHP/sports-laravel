@@ -9,9 +9,22 @@ class Matches extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'home_id',
+        'away_id',
+        'status',
+        'comp_id',
+        'stage',
+        'date',
+        'matchday',
+        'home_score',
+        'away_score'
+    ];
+
     public function competetion(){
-        return $this->belongsTo('competetions');
+        return $this->belongsTo(Competetion::class);
     }
+
     public function matches_homecomp()
     {
         return $this->belongsToMany(
@@ -21,6 +34,7 @@ class Matches extends Model
             'comp_id',
         );
     }
+
     public function matches_awaycomp()
     {
         return $this->belongsToMany(
