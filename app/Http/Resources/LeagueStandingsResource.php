@@ -16,13 +16,11 @@ class LeagueStandingsResource extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
-            'position'=>$this->position
-          
-            // 'position'=>$this->position,
-            // 'goals'=>$this->goals,
-            // 'club'=>new ClubResource($this->club)
+            'club_name'=>$this->name,
+            'club_image'=>$this->image,
+            'position'=>$this->pivot->position,
+            'goals'=>$this->pivot->goals
         ];
     }
 }

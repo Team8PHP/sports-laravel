@@ -14,6 +14,11 @@ class GroupStandingsResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'club_name'=>$this->name,
+            'club_image'=>$this->image,
+            'position'=>$this->pivot->position,
+            'goals'=>$this->pivot->goals
+        ];
     }
 }

@@ -21,6 +21,6 @@ class Player extends Model
             'scorers',
             'player_id',
             'comp_id'
-        );
+        )->withPivot('goals');
     }
 }

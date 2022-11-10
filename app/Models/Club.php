@@ -47,7 +47,7 @@ class Club extends Model
                 'league_standings',
                 'club_id',
                 'comp_id'
-            )->withPivot('goals');
+            )->withPivot('goals', 'position');
         }
 
         public function comp_groups()
@@ -57,6 +57,6 @@ class Club extends Model
                 'group_standings',
                 'club_id',
                 'comp_id'
-            );
+            )->withPivot('goals', 'position');
         }
 }

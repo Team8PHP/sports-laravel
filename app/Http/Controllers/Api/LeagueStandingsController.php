@@ -15,8 +15,8 @@ class LeagueStandingsController extends Controller
     public function show($id)
     {
         $competition = Competetion::find($id);
-        $league = DB::table('league_standings')->where('comp_id', '=', $id)->get();
-
+        // $league = DB::table('league_standings')->where('comp_id', '=', $id)->get();
+        // $koko = $competition->clubs_leagues;
         // $anything= $competition->pivot->goals;
         // return [
         //     'competition'=>$competition,
@@ -25,8 +25,8 @@ class LeagueStandingsController extends Controller
         //     // 'pivot'=>$anything,
         // ];
         // $league = LeagueStanding::find($id);
-return $competition;
         // return $competition;
-        return LeagueStandingsResource::collection($league);
+        // return $competition;
+        return LeagueStandingsResource::collection($competition->clubs_leagues);
     }
 }

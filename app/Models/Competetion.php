@@ -26,7 +26,7 @@ class Competetion extends Model
             'league_standings',
             'comp_id',
             'club_id'
-        )->withPivot('goals');
+        )->withPivot('goals', 'position');
     }
 
     public function clubs_groups()
@@ -36,7 +36,7 @@ class Competetion extends Model
             'group_standings',
             'comp_id',
             'club_id'
-        );
+        )->withPivot('goals', 'position');
     }
 
     public function player()
@@ -46,6 +46,6 @@ class Competetion extends Model
             'scorers',
             'comp_id',
             'player_id'
-        );
+        )->withPivot('goals');
     }
 }
