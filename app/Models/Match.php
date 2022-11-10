@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Matches extends Model
 {
     use HasFactory;
+
+    public function competetion(){
+        return $this->belongsTo('competetions');
+    }
 }

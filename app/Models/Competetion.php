@@ -48,4 +48,8 @@ class Competetion extends Model
             'player_id'
         );
     }
+
+    public function matches(){
+        return $this->hasMany('matches');
+    }
 }

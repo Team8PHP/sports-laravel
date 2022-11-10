@@ -11,7 +11,7 @@ class Player extends Model
 
     public function club()
     {
-        return $this->belongsTo(Club::class);
+        return $this->belongsToMany(Club::class);
     }
 
     public function competition()

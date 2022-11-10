@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class GroupStanding extends Model
 {
     use HasFactory;
+
+    public function clubs(){
+        return $this->hasMany('clubs');
+    }
 }
