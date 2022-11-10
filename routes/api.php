@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\FavouritesController;
 use App\Http\Controllers\Api\GroupStandingsController;
 use App\Http\Controllers\Api\LeaguesController;
 use App\Http\Controllers\Api\LeagueStandingsController;
+use App\Http\Controllers\api\MatchesController;
 use App\Http\Controllers\Api\ScorersController;
 use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
@@ -41,4 +42,4 @@ Route::post('favourites', [FavouritesController::class,'store']);
 
 Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 
-Route::get('matches/{id}', [FavouritesController::class,'show']);
+Route::get('matches/{date}', [MatchesController::class,'show']);
