@@ -22,7 +22,7 @@ class LeagueStandingsResource extends JsonResource
             'position' => $this->pivot->position,
             'goals_for' => $this->pivot->goals_scored,
             'goals_against' => $this->pivot->goals_against,
-            'form' => $this->pivot->form,
+            'form' => explode(',', $this->pivot->form),
             'matches_played' => $this->pivot->matches_played,
             'wins' => $this->pivot->wins,
             'losses' => $this->pivot->losses,
