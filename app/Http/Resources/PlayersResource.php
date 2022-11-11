@@ -17,6 +17,7 @@ class PlayersResource extends JsonResource
         return [
             'name' => $this->name,
             'nationality' => $this->nationality,
+            "position"=>$this->position,
             'goals' => $this->pivot->goals,
             'club' => $this->club,
             // 'club'=>new ClubsResource($this->club)
