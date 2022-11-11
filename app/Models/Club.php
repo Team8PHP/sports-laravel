@@ -51,7 +51,7 @@ class Club extends Model
     {
         return $this->belongsToMany(
             Competetion::class,
-            "comp_club",
+            "comp_clubs",
             "club_id",
             "comp_id"
         );
