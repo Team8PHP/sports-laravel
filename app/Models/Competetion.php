@@ -20,6 +20,6 @@ class Competetion extends Model
 
     public function club()
     {
-        return $this->belongsToMany(Club::class, "comp_club", "comp_id", "club_id");
+        return $this->belongsToMany(Club::class, "clubs", "comp_id", "club_id");
     }
 }
