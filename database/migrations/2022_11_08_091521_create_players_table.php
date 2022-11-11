@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Run the migrations.
      *
@@ -14,12 +13,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('players', function (Blueprint $table) {
-            $table->id();
+            $table->unsignedInteger("Id");
+            $table->primary("Id");
             $table->string('name');
             $table->string('nationality');
-            $table->unsignedBigInteger('club_id');
-            $table->foreign('club_id')->references('id')->on('clubs');
-            $table->date('birth_date');
+            $table->unsignedInteger('club_id');
+            $table->foreign('club_id')->references('Id')->on('clubs');
+            $table->string('position')->nullable();
+            $table->date('birth_date')->nullable();
             $table->timestamps();
         });
     }
