@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\api\ClubController;
 use App\Http\Controllers\Api\CompetitionsController;
 use App\Http\Controllers\Api\FavouritesController;
 use App\Http\Controllers\Api\GroupStandingsController;
@@ -27,6 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('leagues', [LeaguesController::class,'index']);
+Route::get('clubs', [ClubController::class,'index']);
 
 Route::get('league/{id}', [LeagueStandingsController::class,'show']);
 
