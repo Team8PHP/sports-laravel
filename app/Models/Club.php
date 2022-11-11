@@ -24,7 +24,12 @@ class Club extends Model
 
     public function players()
     {
-        return $this->hasMany(Player::class);
+        return $this->belongsToMany(
+            players::class,
+            'scorers',
+            'club_id',
+            'player_id',
+        );
     }
 
         public function users()
