@@ -16,6 +16,7 @@ class ScorersResource extends JsonResource
     {
         return [
             'players'=>PlayersResource::collection($this->player)
+            // 'player' => $this->player
         ];
     }
 }

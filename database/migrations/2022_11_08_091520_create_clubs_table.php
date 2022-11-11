@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('clubs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('comp_id');
-            $table->foreign('comp_id')->references('id')->on('competetions');
             $table->string('tla');
             $table->string('venue');
             $table->string('image');

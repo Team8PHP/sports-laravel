@@ -12,7 +12,6 @@ class CompetitionsController extends Controller
     public function show($id)
     {
         $competition = Competetion::find($id);
-
         return new CompetitionsResource($competition);
     }
 }

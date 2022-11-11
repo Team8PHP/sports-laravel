@@ -15,10 +15,14 @@ class PlayersResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'=>$this->name,
-            'nationality'=>$this->nationality,
-            'goals'=>$this->pivot->goals,
-            'club'=>$this->club
+            'name' => $this->name,
+            'club_id'=>$this->club_id,
+            'nationality' => $this->nationality,
+            'goals' => $this->pivot->goals,
+            'comp_id' => $this->pivot->comp_id,
+            // 'club' => $this->club->where('comp_id', $this->pivot->comp_id)->all()
+            'club' => $this->club
+            // 'club' => ClubsResource::collection)
         ];
     }
 }
