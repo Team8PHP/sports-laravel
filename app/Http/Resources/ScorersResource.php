@@ -16,8 +16,10 @@ class ScorersResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'player_id'=>$this->player_id,
-            // 'player'=>Player::find($this->player_id)  
+            // 'player_id'=>$this->player_id,
+            // 'club'=>ClubsResource::collection($this->club),
+            'player'=>PlayersResource::collection($this->player)
+            // 'player'=>Player::find($this->player_id)
         ];
     }
 }

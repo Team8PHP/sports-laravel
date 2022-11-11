@@ -15,9 +15,11 @@ class FavouritesResource extends JsonResource
     public function toArray($request)
     {
         return  [
-            'id'=>$this->id,
-            'club_name'=>$this->name,
-            'club_image'=>$this->image
-            ];
+            'favourite_id' => $this->pivot->id,
+            'club_name' => $this->name,
+            'club_image' => $this->image
+            // 'club_image' => $this->clubs->image
+            // 'club' => ClubsResource::collection($this->clubs)
+        ];
     }
 }

@@ -15,10 +15,11 @@ class PlayersResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'=>$this->name,
-            // 'nationality'=>$this->nationality,
-            // 'goals'=>$this->pivot->goals,
-            // 'club'=>$this->club
+            'name' => $this->name,
+            'nationality' => $this->nationality,
+            'goals' => $this->pivot->goals,
+            'club' => $this->club,
+            // 'club'=>new ClubsResource($this->club)
         ];
     }
 }

@@ -8,9 +8,11 @@ use App\Http\Controllers\Controller;
 use App\Models\Matches;
 
 class MatchesController extends Controller
-{   public function show($date){
+{
+    public function show($date)
+    {
 
-    $match = Matches::where('date',$date)->with('competetion')->get();
-    return $match;
-}
+        $match = Matches::where('date', $date)->with('competetion')->get();
+        return $match;
+    }
 }

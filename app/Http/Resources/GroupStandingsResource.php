@@ -15,11 +15,18 @@ class GroupStandingsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'club_name'=>$this->name,
-            'club_image'=>$this->image,
-            'position'=>$this->pivot->position,
-            'goals'=>$this->pivot->goals,
-            'group'=>$this->pivot->group_name
+
+            'club_name' => $this->name,
+            'club_image' => $this->image,
+            'position' => $this->pivot->position,
+            'group' => $this->pivot->group_name,
+            'goals_for' => $this->pivot->goals_scored,
+            'goals_against' => $this->pivot->goals_against,
+            'form' => $this->pivot->form,
+            'matches_played' => $this->pivot->matches_played,
+            'wins' => $this->pivot->wins,
+            'losses' => $this->pivot->losses,
+            'draws' => $this->pivot->draws,
         ];
     }
 }

@@ -51,6 +51,11 @@ class User extends Authenticatable
 
     public function clubs()
     {
-        return $this->belongsToMany(Club::class, "favourites", "user_id", "club_id");
+        return $this->belongsToMany(
+            Club::class,
+            "favourites",
+            "user_id",
+            "club_id"
+        )->withPivot('id');
     }
 }

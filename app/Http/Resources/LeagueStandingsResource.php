@@ -17,10 +17,17 @@ class LeagueStandingsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'club_name'=>$this->name,
-            'club_image'=>$this->image,
-            'position'=>$this->pivot->position,
-            'goals'=>$this->pivot->goals
+            'club_name' => $this->name,
+            'club_image' => $this->image,
+            'position' => $this->pivot->position,
+            'goals_for' => $this->pivot->goals_scored,
+            'goals_against' => $this->pivot->goals_against,
+            'form' => $this->pivot->form,
+            'matches_played' => $this->pivot->matches_played,
+            'wins' => $this->pivot->wins,
+            'losses' => $this->pivot->losses,
+            'draws' => $this->pivot->draws,
         ];
     }
 }
+//'form','matches_played','wins','losses','draws'

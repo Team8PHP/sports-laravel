@@ -20,6 +20,41 @@ class Competetion extends Model
 
     public function club()
     {
-        return $this->belongsToMany(Club::class, "comp_club", "comp_id", "club_id");
+        return $this->belongsToMany(
+            Club::class,
+            "comp_club",
+            "comp_id",
+            "club_id"
+        );
+    }
+
+    public function player()
+    {
+        return $this->belongsToMany(
+            Player::class,
+            'scorers',
+            'comp_id',
+            'player_id'
+        )->withPivot('goals');
+    }
+
+    public function clubs_groups()
+    {
+        return $this->belongsToMany(
+            Club::class,
+            'group_standings',
+            'comp_id',
+            'club_id'
+        )->withPivot('position', 'group_name', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws');
+    }
+
+    public function clubs_league()
+    {
+        return $this->belongsToMany(
+            Club::class,
+            'league_standings',
+            'comp_id',
+            'club_id'
+        )->withPivot('position', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws');
     }
 }
