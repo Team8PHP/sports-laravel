@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Matches extends Model
+class favourite extends Model
 {
     use HasFactory;
-
-    public function competetion(){
-        return $this->belongsTo('competetions');
-    }
+    
+    protected $fillable = [
+        'user_id',
+        'club_id',
+    ];
 }

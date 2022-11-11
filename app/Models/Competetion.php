@@ -9,6 +9,12 @@ class Competetion extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'current_matchday',
+        'image',
+    ];
+
     public function clubs()
     {
         return $this->belongsToMany(

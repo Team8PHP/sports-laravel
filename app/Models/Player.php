@@ -9,6 +9,13 @@ class Player extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'nationality',
+        'club_id',
+        'birth_date',
+    ];
+
     // public function club()
     // {
     //     return $this->belongsToMany(Club::class);
