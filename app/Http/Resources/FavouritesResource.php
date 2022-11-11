@@ -16,6 +16,7 @@ class FavouritesResource extends JsonResource
     {
         return  [
             'favourite_id' => $this->pivot->id,
+            "club_id"=>$this->pivot->club_id,
             'club_name' => $this->name,
             'club_image' => $this->image
             // 'club_image' => $this->clubs->image
