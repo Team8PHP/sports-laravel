@@ -8,15 +8,32 @@ use Illuminate\Database\Eloquent\Model;
 class Club extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'name',
+        'image',
+        'tla',
+        'venue',
+        'founded',
+    ];
 
-    public function favourites()
-    {
-        return $this->belongsToMany(Favourite::class);
-    }
+    // public function favourites()
+    // {
+    //     return $this->belongsToMany(Favourite::class);
+    // }
 
     public function players()
     {
         return $this->hasMany(Player::class);
     }
 
+        public function users()
+        {
+            return $this->belongsToMany(User::class, "favourites", "club_id", "user_id");
+        }
+
+        public function competetion()
+        {
+            return $this->belongsToMany(Competetion::class, "comp_club", "club_id", "comp_id");
+        }
 }

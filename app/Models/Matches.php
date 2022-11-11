@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Matches extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        "Id",
+        'home_id',
+        'away_id',
+        'status',
+        'comp_id',
+        'stage',
+        'date',
+        'matchday',
+        'home_score',
+        'away_score'
+    ];
 }
