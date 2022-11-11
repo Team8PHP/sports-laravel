@@ -15,14 +15,18 @@ class ScorersController extends Controller
     {
         $competition = Competetion::find($id);
         // $scorers = DB::table('scorers')->where('comp_id', '=', $id)->get();
+        // $scorers = Scorer::where('comp_id',$id)->get();
+        // $players =Db::table('players')->where('id',"=", $scorers->value(('player_id')));
         // return $competition;
         // return [
         // 'competition'=>$competition,
-        // 'players'=>$competition->player,
-        // 'scorers'=>$scorers
+        // 'players'=>$competition->players,
+    
         // ];
-        // return $competition;
-        // return $competition->clubs;
-        return new ScorersResource($competition);
+        // return [$competition;
+        return $competition->club;
+        // return new ScorersResource($competition);
+        // return $scorers;
+        // return ScorersResource::collection($scorers);
     }
 }

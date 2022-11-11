@@ -25,8 +25,9 @@ class LeagueStandingsController extends Controller
         //     // 'pivot'=>$anything,
         // ];
         // $league = LeagueStanding::find($id);
+        return $competition;
+        return $competition->club;
         // return $competition;
-        // return $competition;
-        return LeagueStandingsResource::collection($competition->clubs_leagues);
+        // return LeagueStandingsResource::collection($competition->clubs_leagues);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Club;
 use App\Models\User;
-use App\Models\Favourite;
+use App\Models\favourite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClubsResource;

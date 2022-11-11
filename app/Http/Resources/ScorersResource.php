@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Player;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ScorersResource extends JsonResource
@@ -15,7 +16,8 @@ class ScorersResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'players'=>PlayersResource::collection($this->player)
+            'player_id'=>$this->player_id,
+            // 'player'=>Player::find($this->player_id)  
         ];
     }
 }
