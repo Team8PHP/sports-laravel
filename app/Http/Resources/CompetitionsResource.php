@@ -15,8 +15,10 @@ class CompetitionsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'name'=>$this->name,
-            'image'=>$this->image
+            'comp_name'=>$this->name,
+            'comp_image'=>$this->image,
+            'comp_country'=>$this->country,
+            'comp_country_image'=>$this->country_image,
         ];
     }
 }
