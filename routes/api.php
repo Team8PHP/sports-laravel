@@ -31,6 +31,8 @@ Route::post('/auth/login', [AuthController::class, 'loginUser']);
 Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
+Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
 Route::get('leagues', [LeaguesController::class,'index']);
 
