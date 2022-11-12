@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('leagues', [LeaguesController::class,'index']);
+
 Route::get('clubs', [ClubController::class,'index']);
 
 Route::get('league/{id}', [LeagueStandingsController::class,'show']);
