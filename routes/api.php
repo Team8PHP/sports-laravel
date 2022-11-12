@@ -38,6 +38,7 @@ Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFacebook']);
 
 Route::get('leagues', [LeaguesController::class,'index']);
+
 Route::get('clubs', [ClubController::class,'index']);
 
 Route::get('league/{id}', [LeagueStandingsController::class,'show']);
@@ -55,3 +56,5 @@ Route::post('favourites', [FavouritesController::class,'store']);
 Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 
 Route::get('matches/{date}', [MatchesController::class,'show']);
+
+Route::get('matches/live', [MatchesController::class,'index']);

@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers\api;
 
-
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\MatchResource;
+use Illuminate\Http\Request;
 use App\Models\Matches;
 use App\Models\Club;
 use App\Models\Competetion;
 
-class MatchesController extends Controller
+class LiveController extends Controller
 {
-    public function show($date)
+    public function index()
     {
 
-        $matches = Matches::where('date', $date)->get();
+        $matches = Matches::where('status','live')->get();
         foreach($matches as $match ){
             $homeid = $match->value('home_id');
             $home = Club::find( $homeid);
@@ -34,7 +32,5 @@ class MatchesController extends Controller
         // ,'awayclub'=>$match->awayClub
         // ,'comp'=>$match->comp
     ];
-        // $home=$match->home_id;
-        // return  MatchResource::collection($match,$home);
-    }
+}
 }
