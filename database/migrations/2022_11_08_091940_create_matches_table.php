@@ -22,11 +22,12 @@ return new class () extends Migration {
             $table->string('status');
             $table->unsignedInteger('comp_id');
             $table->foreign('comp_id')->references('id')->on('competetions');
-            $table->string('stage');
+            $table->string('stage');    
             $table->date('date');
+            $table->string('time');
             $table->integer('matchday');
-            $table->integer('home_score');
-            $table->integer('away_score');
+            $table->integer('home_score')->nullable();
+            $table->integer('away_score')->nullable();
             $table->timestamps();
         });
     }
