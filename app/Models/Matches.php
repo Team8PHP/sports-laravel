@@ -18,6 +18,7 @@ class Matches extends Model
         'date',
         'matchday',
         'home_score',
-        'away_score'
+        'away_score',
+        'time'
     ];
 }

@@ -22,6 +22,7 @@ return new class () extends Migration {
             $table->integer('goals_against');
             $table->string('form');
             $table->integer('matches_played');
+            $table->integer('points');
             $table->integer('wins');
             $table->integer('losses');
             $table->integer('draws');
