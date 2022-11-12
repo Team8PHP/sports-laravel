@@ -45,7 +45,7 @@ class Competetion extends Model
             'group_standings',
             'comp_id',
             'club_id'
-        )->withPivot('position', 'group_name', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws');
+        )->withPivot('position', 'group_name', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws', 'points');
     }
 
     public function clubs_league()
@@ -55,6 +55,6 @@ class Competetion extends Model
             'league_standings',
             'comp_id',
             'club_id'
-        )->withPivot('position', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws');
+        )->withPivot('position', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws', "points");
     }
 }

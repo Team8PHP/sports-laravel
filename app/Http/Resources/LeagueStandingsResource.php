@@ -27,6 +27,7 @@ class LeagueStandingsResource extends JsonResource
             'wins' => $this->pivot->wins,
             'losses' => $this->pivot->losses,
             'draws' => $this->pivot->draws,
+            'points' => $this->pivot->points,
         ];
     }
 }

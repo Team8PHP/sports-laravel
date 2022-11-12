@@ -34,7 +34,7 @@ class Club extends Model
 
     public function players()
     {
-       return $this->hasMany(Player::class);
+        return $this->hasMany(Player::class);
     }
 
     public function users()
@@ -64,7 +64,7 @@ class Club extends Model
             'group_standings',
             'club_id',
             'comp_id'
-        )->withPivot('position', 'group_name','goals_scored','goals_against','form','matches_played','wins','losses','draws');
+        )->withPivot('position', 'group_name', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws', "points");
     }
 
     public function comp_league()
@@ -74,8 +74,6 @@ class Club extends Model
             'league_standings',
             'club_id',
             'comp_id'
-        )->withPivot('position','goals_scored','goals_against','form','matches_played','wins','losses','draws');
+        )->withPivot('position', 'goals_scored', 'goals_against', 'form', 'matches_played', 'wins', 'losses', 'draws', "points");
     }
-
-    
 }
