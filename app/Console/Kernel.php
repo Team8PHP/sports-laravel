@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Jobs\Leagues;
 use App\Jobs\Leagues_Scorers;
+use App\Jobs\Matches_Filler;
 use App\Jobs\PL;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -19,7 +20,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->job(new Leagues());
-        $schedule->job(new Leagues_Scorers());
+        // $schedule->job(new Leagues_Scorers());
+        // $schedule->job(new Matches_Filler());
     }
 
     /**
