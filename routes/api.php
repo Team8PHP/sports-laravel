@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\api\ClubController;
 use App\Http\Controllers\Api\CompetitionsController;
 use App\Http\Controllers\Api\FavouritesController;
@@ -12,6 +13,7 @@ use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\SocialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
-Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
+// Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
