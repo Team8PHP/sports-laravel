@@ -16,18 +16,18 @@ class MatchesController extends Controller
     {
 
         $matches = Matches::where('date', $date)->get();
+
         foreach($matches as $match ){
-            $homeid = $match->value('home_id');
+            $homeid = $match->home_id;
             $home = Club::find( $homeid);
             $match->homeClub = $home;
-            $awayid = $match->value('away_id');
+            $awayid = $match->away_id;
             $away = Club::find( $awayid);
             $match->awayClub = $away;
-            $compid = $match->value('comp_id');
-            $comp = Competetion::find( $compid);
+            $compid = $match->comp_id;
+            $comp = Competetion::find($compid);
             $match->comp = $comp;
         }
-        
         return [
         'match'=>$matches
         // ,'homeClub'=>$match->homeClub
