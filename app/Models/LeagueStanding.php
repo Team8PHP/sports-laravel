@@ -20,5 +20,6 @@ class LeagueStanding extends Model
         'wins',
         'losses',
         'draws',
+        "points",
     ];
 }
