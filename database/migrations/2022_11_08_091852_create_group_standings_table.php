@@ -18,7 +18,10 @@ return new class () extends Migration {
             $table->unsignedInteger('club_id');
             $table->foreign('club_id')->references('id')->on('clubs');
             $table->integer('position');
-            $table->string('group_name');
+            $table->enum('group_name', [
+                'GROUP_A' , 'GROUP_B' , 'GROUP_C' , 'GROUP_D' , 'GROUP_E' , 'GROUP_F' ,
+                'GROUP_G' , 'GROUP_H' , 'GROUP_I' , 'GROUP_J' , 'GROUP_K' , 'GROUP_L'
+            ]);
             $table->integer('goals_scored');
             $table->integer('goals_against');
             $table->string('form');
@@ -30,7 +33,6 @@ return new class () extends Migration {
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

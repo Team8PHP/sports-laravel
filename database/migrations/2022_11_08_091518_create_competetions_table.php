@@ -17,7 +17,7 @@ return new class () extends Migration {
             $table->primary("Id");
             $table->string('name');
             $table->string('image')->nullable();
-            $table->string('type')->nullable();
+            $table->enum('type', ['LEAGUE' , 'LEAGUE_CUP' , 'CUP' , 'PLAYOFFS']);
             $table->string('country')->nullable();
             $table->string('country_image')->nullable();
             $table->integer('current_matchday')->nullable();
