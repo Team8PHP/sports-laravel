@@ -53,7 +53,8 @@ class Club extends Model
             Competetion::class,
             "comp_clubs",
             "club_id",
-            "comp_id"
+            "comp_id",
+            "Id"
         );
     }
 
