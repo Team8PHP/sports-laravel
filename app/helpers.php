@@ -12,9 +12,9 @@ if (!function_exists('seed_news')) {
             News::updateOrCreate([
                 'source'=> $article->source->name,
                 'author'=> $article->author,
-                'title'=> $article->title,
-                'description'=> $article->description,
-                'content'=> $articleContent,
+                'title'=> utf8_encode($article->title),
+                'description'=> utf8_encode($article->description),
+                'content'=> utf8_encode($articleContent),
                 'date'=> $articleDate,
                 'time'=>$articleTime,
                 'url'=> $article->url,
