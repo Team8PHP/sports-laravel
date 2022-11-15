@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\LeaguesController;
 use App\Http\Controllers\Api\LeagueStandingsController;
 use App\Http\Controllers\api\LiveController;
 use App\Http\Controllers\api\MatchesController;
+use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\ScorersController;
 use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
@@ -59,3 +60,4 @@ Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 Route::get('matches/{date}', [MatchesController::class,'show']);
 
 Route::get('matches/live/{date}', [LiveController::class,'index']);
+Route::get('news', [NewsController::class,'index']);
