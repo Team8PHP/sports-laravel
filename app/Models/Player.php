@@ -20,7 +20,7 @@ class Player extends Model
 
     public function club()
     {
-        return $this->belongsTo(Club::class);
+        return $this->belongsTo(Club::class,'player_id','Id');
     }
 
     public function competition()

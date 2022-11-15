@@ -18,6 +18,10 @@ class ClubsResource extends JsonResource
             'club_name'=>$this->name,
             'club_id'=>$this->Id,
             'club_image'=>$this->image,
+            'club_tla' =>$this->tla,
+            'club_venue' =>$this->venue,
+            'club_founded' =>$this->founded,
+            'players'=>  $this->players
             // 'comp_id'=>$this->comp_id,
 
         ];

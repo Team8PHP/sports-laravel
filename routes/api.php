@@ -42,6 +42,8 @@ Route::get('leagues', [LeaguesController::class,'index']);
 
 Route::get('clubs', [ClubController::class,'index']);
 
+Route::get('club/{id}', [ClubController::class,'show']);
+
 Route::get('league/{id}', [LeagueStandingsController::class,'show']);
 
 Route::get('competition/{id}', [CompetitionsController::class,'show']);
@@ -59,3 +61,5 @@ Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 Route::get('matches/{date}', [MatchesController::class,'show']);
 
 Route::get('matches/live/{date}', [LiveController::class,'index']);
+
+Route::get('matches/favourites/{date}', [MatchesController::class,'index']);
