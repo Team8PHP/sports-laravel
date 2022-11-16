@@ -19,10 +19,18 @@ return new class () extends Migration {
             $table->foreign('home_id')->references('id')->on('clubs');
             $table->unsignedInteger('away_id');
             $table->foreign('away_id')->references('id')->on('clubs');
-            $table->string('status');
+            $table->enum('status', [
+                'SCHEDULED' , 'TIMED' , 'IN_PLAY' , 'PAUSED' , 'EXTRA_TIME' , 'PENALTY_SHOOTOUT' , 'FINISHED' ,
+                 'SUSPENDED' , 'POSTPONED' , 'CANCELLED' , 'AWARDED'
+            ]);
             $table->unsignedInteger('comp_id');
             $table->foreign('comp_id')->references('id')->on('competetions');
-            $table->string('stage');    
+            $table->enum('stage', [
+                'REGULAR_SEASON','FINAL','THIRD_PLACE' ,'SEMI_FINALS' ,'QUARTER_FINALS' ,'LAST_16' ,'LAST_32' ,'LAST_64' ,
+                'ROUND_4','ROUND_3' , 'ROUND_2' , 'ROUND_1' , 'GROUP_STAGE' , 'PRELIMINARY_ROUND' , 'QUALIFICATION' ,
+                'QUALIFICATION_ROUND_1' , 'QUALIFICATION_ROUND_2' , 'QUALIFICATION_ROUND_3' , 'PLAYOFF_ROUND_1' , 'PLAYOFF_ROUND_2' ,
+                 'PLAYOFFS' , 'REGULAR_SEASON' , 'CLAUSURA' , 'APERTURA' , 'CHAMPIONSHIP' , 'RELEGATION' , 'RELEGATION_ROUND',
+            ]);
             $table->date('date');
             $table->string('time');
             $table->integer('matchday');
