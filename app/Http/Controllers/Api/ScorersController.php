@@ -29,6 +29,8 @@ class ScorersController extends Controller
         // ];
         // return $competition->player;
         // return $competition->player;
+
+        // return $competition->club;
         return new ScorersResource($competition);
         // return $scorers;
         // return ScorersResource::collection($competition);

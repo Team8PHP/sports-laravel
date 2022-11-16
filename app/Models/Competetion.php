@@ -22,9 +22,10 @@ class Competetion extends Model
     {
         return $this->belongsToMany(
             Club::class,
-            "comp_club",
+            "comp_clubs",
             "comp_id",
-            "club_id"
+            "club_id",
+            'id'
         );
     }
 

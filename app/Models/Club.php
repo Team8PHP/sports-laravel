@@ -34,7 +34,7 @@ class Club extends Model
 
     public function players()
     {
-        return $this->hasMany(Player::class);
+        return $this->hasMany(Player::class,'club_id','Id');
     }
 
     public function users()
@@ -53,7 +53,8 @@ class Club extends Model
             Competetion::class,
             "comp_clubs",
             "club_id",
-            "comp_id"
+            "comp_id",
+            "Id"
         );
     }
 
