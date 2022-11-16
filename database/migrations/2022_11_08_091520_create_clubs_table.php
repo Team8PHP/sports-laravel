@@ -19,6 +19,8 @@ return new class () extends Migration {
             $table->string('tla')->nullable();
             $table->string('venue')->nullable();
             $table->string('image')->nullable();
+            $table->string('country_name')->nullable();
+            $table->string('country_image')->nullable();
             $table->string('founded')->nullable();
             $table->timestamps();
         });
