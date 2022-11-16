@@ -47,9 +47,16 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function latestNews()
     {
-        //
+        $news = News::all()->sortByDesc("time")->sortByDesc("date")->take(1);
+        return  NewsResource::collection($news);
+    }
+
+    public function otherNews()
+    {
+        $news = News::all()->sortByDesc("time")->sortByDesc("date")->skip(1)->take(9);
+        return  NewsResource::collection($news);
     }
 
     /**

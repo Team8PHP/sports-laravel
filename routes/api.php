@@ -61,3 +61,5 @@ Route::get('matches/{date}', [MatchesController::class,'show']);
 
 Route::get('matches/live/{date}', [LiveController::class,'index']);
 Route::get('news', [NewsController::class,'index']);
+Route::get('news/latest', [NewsController::class,'latestNews']);
+Route::get('news/other', [NewsController::class,'otherNews']);
