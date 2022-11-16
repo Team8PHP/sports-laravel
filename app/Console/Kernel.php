@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel
         // $schedule->job(new Leagues());
         // $schedule->job(new Leagues_Scorers());
         // $schedule->job(new Matches_Filler());
-        $schedule->job(new NewsSeeding());
+        // $schedule->job(new NewsSeeding());
     }
 
     /**

@@ -15,10 +15,15 @@ class FavouritesMatchesController extends Controller
     public function show($userid,$date)
     {
         $userclubs=User::find($userid)->clubs;
-    
+    $matchestotal= [];
         foreach($userclubs as $club){
             $clubid= $club->Id;
-            $matches = Matches::where('date', $date)->get();
+            // echo $clubid;
+            // echo '<br>';
+        // }
+        
+            $matches = Matches::where('date', $date)->where('home_id', '=', $clubid)
+            ->orwhere('date', $date)->where('away_id', '=', $clubid)->get();
             foreach($matches as $match ){
                 $homeid = $match->home_id;
                 $home = Club::find( $homeid);
@@ -29,13 +34,14 @@ class FavouritesMatchesController extends Controller
                 $compid = $match->comp_id;
                 $comp = Competetion::find($compid);
                 $match->comp = $comp;
+                array_push($matchestotal,$match);
             }
         }
-
-
+        
         return [
-        'match'=>$matches
+         'match'=> $matchestotal
     ];
+
     // return $clubid;
 }
 }
