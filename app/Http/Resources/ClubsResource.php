@@ -24,7 +24,6 @@ class ClubsResource extends JsonResource
             'competitions' =>  $this->competetion,
             'players' =>  $this->players
             // 'comp_id'=>$this->comp_id,
-
         ];
     }
 }
