@@ -16,4 +16,13 @@ class ClubController extends Controller
 
         return  ClubsResource::collection($club);
     }
+    public function searchClub(Request $request) {
+        $query = Club::query();
+        $data = $request->input('search_club');
+        if($data){
+            $query->whereRaw("name LIKE '%" .$data. "%'");
+        }
+        return $query->get();
+    }
+
 }
