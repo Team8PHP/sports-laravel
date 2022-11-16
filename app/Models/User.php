@@ -27,6 +27,7 @@ class User extends Authenticatable
         'password',
         'fb_id',
         'google_id',
+        'role'
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -37,7 +38,7 @@ class User extends Authenticatable
         'password',
         'remember_token',
         'two_factor_recovery_codes',
-        'two_factor_secret',
+        'two_factor_secret'
     ];
     /**
      * The attributes that should be cast to native types.

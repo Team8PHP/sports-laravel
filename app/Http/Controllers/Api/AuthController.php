@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class AuthController extends Controller
 {
@@ -101,4 +102,12 @@ class AuthController extends Controller
             ], 500);
         }
     }
+
+    // public function getUser(Request $request){
+    //     $token = PersonalAccessToken::findToken($request->token);
+    //     $user = $token->tokenable;
+    //     // dd($user);
+    //     return $user;
+
+    // }
 }

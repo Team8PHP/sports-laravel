@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\api\ClubController;
 use App\Http\Controllers\Api\CompetitionsController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\FavouritesController;
 use App\Http\Controllers\Api\GroupStandingsController;
 use App\Http\Controllers\Api\LeaguesController;
@@ -32,6 +33,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
+// Route::post('/auth/user', [AuthController::class, 'getUser']);
 // Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
@@ -59,3 +61,10 @@ Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 Route::get('matches/{date}', [MatchesController::class,'show']);
 
 Route::get('matches/live/{date}', [LiveController::class,'index']);
+
+//admin dashboard
+Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    Route::get('admin/users', [DashboardController::class,'userIndex']);
+    Route::put('admin/users/{id}', [DashboardController::class,'makeAdmin']);
+    Route::delete('admin/users/{id}', [DashboardController::class,'deleteUser']);
+});
