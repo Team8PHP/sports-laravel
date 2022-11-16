@@ -12,7 +12,11 @@ class LiveController extends Controller
 {
     public function index()
     {
-        $matches = Matches::where('status', ['IN_PLAY','PAUSED','EXTRA_TIME', 'PENALTY_SHOOTOUT'])->get();
+        $matches = Matches::where('status', 'IN_PLAY') 
+        ->orwhere('status','PAUSED')
+        ->orwhere('status','EXTRA_TIME')
+        ->orwhere('status','PENALTY_SHOOTOUT')
+        ->get();
         foreach ($matches as $match) {
             $homeid = $match->home_id;
             $home = Club::find($homeid);
