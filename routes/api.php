@@ -12,6 +12,7 @@ use App\Http\Controllers\api\LiveController;
 use App\Http\Controllers\api\MatchesController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\ScorersController;
+use App\Http\Controllers\FavouritesMatchesController;
 use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -75,4 +76,4 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::delete('admin/users/{id}', [DashboardController::class,'deleteUser']);
 });
 
-Route::get('matches/favourites/{date}', [MatchesController::class,'index']);
+Route::get('matches/favourites/{userid}/{date}', [FavouritesMatchesController::class,'show']);
