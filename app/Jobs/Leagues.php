@@ -76,13 +76,19 @@ class Leagues implements ShouldQueue
                     'comp_id'=> $Competition->id,
                     'club_id' => $team->id,
                 ]);
+                $currentDate = date("Y-m-d");
                 foreach ($team->squad as $player) {
+                    $birthDate = $player->dateOfBirth;
+                    $age = date_diff(date_create($birthDate), date_create($currentDate));
+                    
                     Player::updateOrCreate([
                         'name' => $player->name,
                         'id' => $player->id,
                         'club_id' =>$team->id,
                         'position' =>$player->position,
                         'nationality' => $player->nationality,
+                        'birth_date' => $player->dateOfBirth,
+                        'age'=>$age->format("%y")
                     ]);
                 }
             }
