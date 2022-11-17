@@ -36,4 +36,11 @@ class FavouritesController extends Controller
         $favorite->delete();
         return $favorite;
     }
+    // public function destroybyuser($userid,$clubid)
+    // {
+    //     $favorite = Favourite::where('user_id','=',$userid)->where('club_id','=',$clubid);
+    //     // return $favorite;
+    //     $favorite->delete();
+    //     return $favorite;
+    // }
 }

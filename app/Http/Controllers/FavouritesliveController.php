@@ -14,11 +14,12 @@ class FavouritesliveController extends Controller
     public function show($userid,$date)
     {
         $userclubs=User::find($userid)->clubs;
+        // return $userclubs;
     $matchestotal= [];
         foreach($userclubs as $club){
             $clubid= $club->Id;
-            $matches = Matches::where('home_id', '=', $clubid)->where('status','IN_PLAY')
-            ->orwhere('away_id', '=', $clubid)->where('status','IN_PLAY')->get();
+            $matches = Matches::where('date', $date)->where('home_id', '=', $clubid)->where('status','IN_PLAY')
+            ->orwhere('date', $date)->where('away_id', '=', $clubid)->where('status','IN_PLAY')->get();
             foreach($matches as $match ){
                 $homeid = $match->home_id;
                 $home = Club::find( $homeid);

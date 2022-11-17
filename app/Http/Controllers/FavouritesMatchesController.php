@@ -18,7 +18,7 @@ class FavouritesMatchesController extends Controller
     $matchestotal= [];
         foreach($userclubs as $club){
             $clubid= $club->Id;
-            $matches = Matches::where('date', $date)->where('home_id', '=', $clubid)->w
+            $matches = Matches::where('date', $date)->where('home_id', '=', $clubid)
             ->orwhere('date', $date)->where('away_id', '=', $clubid)->get();
             foreach($matches as $match ){
                 $homeid = $match->home_id;
