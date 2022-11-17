@@ -12,6 +12,7 @@ use App\Http\Controllers\api\LiveController;
 use App\Http\Controllers\api\MatchesController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\ScorersController;
+use App\Http\Controllers\FavouritesliveController;
 use App\Http\Controllers\FavouritesMatchesController;
 use App\Models\LeagueStanding;
 use Illuminate\Http\Request;
@@ -78,3 +79,4 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
 });
 
 Route::get('matches/favourites/{userid}/{date}', [FavouritesMatchesController::class,'show']);
+Route::get('matches/favourites/live/{userid}/{date}', [FavouritesliveController::class,'show']);
