@@ -15,6 +15,7 @@ class Player extends Model
         'club_id',
         'position',
         'birth_date',
+        'age'
     ];
 
 

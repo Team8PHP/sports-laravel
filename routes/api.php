@@ -67,7 +67,8 @@ Route::get('matches/{date}', [MatchesController::class,'show']);
 Route::get('matches/live/{date}', [LiveController::class,'index']);
 Route::get('news', [NewsController::class,'index']);
 Route::get('news/latest', [NewsController::class,'latestNews']);
-Route::get('news/other', [NewsController::class,'otherNews']);
+Route::get('news/other/{page}', [NewsController::class,'otherNews']);
+Route::get('news/count', [NewsController::class,'countNews']);
 
 //admin dashboard
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {

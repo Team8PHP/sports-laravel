@@ -21,6 +21,7 @@ return new class () extends Migration {
             $table->foreign('club_id')->references('Id')->on('clubs');
             $table->string('position')->nullable();
             $table->date('birth_date')->nullable();
+            $table->integer('age');
             $table->timestamps();
         });
     }

@@ -53,10 +53,20 @@ class NewsController extends Controller
         return  NewsResource::collection($news);
     }
 
-    public function otherNews()
+    public function otherNews($page)
     {
-        $news = News::all()->sortByDesc("time")->sortByDesc("date")->skip(1)->take(18);
+        if ($page==1) {
+            $news = News::all()->sortByDesc("time")->sortByDesc("date")->skip(1)->take(18);
+        } else {
+            $news = News::all()->sortByDesc("time")->sortByDesc("date")->skip(1+18*($page-1))->take(18);
+        }
         return  NewsResource::collection($news);
+    }
+
+    public function countNews()
+    {
+        $newsCount =News::count();
+        return  $newsCount;
     }
 
     /**

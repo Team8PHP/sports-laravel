@@ -41,17 +41,21 @@ class Leagues_Scorers implements ShouldQueue
                 'X-Auth-Token' => 'b0a3cc6c6af44139bb0fa3f11ae1f2ec',
             ])->get('http://api.football-data.org/v4/competitions/'.$league.'/scorers?limit=8');
             $newData=json_decode($data);
-
+    
             $scorers=$newData->scorers;
             $comp_id=$newData->competition->id;
             foreach($scorers as $scorer){
+                $id=$scorer->player->id ;
+                if($league == 'SA' && $scorer->player->id == 161370 ){
+                    $id=3011;
+                }
                 Scorer::updateOrCreate([
-                    'player_id'=> $scorer->player->id,
+                    'player_id'=> $id,
                     'comp_id'=> $comp_id,
                     'goals'=> $scorer->goals,
                 ]);
             }
-
+    
         }
     }
 }
