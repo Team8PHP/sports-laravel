@@ -25,7 +25,6 @@ class ClubsResource extends JsonResource
             'country_image' => $this->country_image,
             'competitions' =>  $this->competetion,
             'players' =>  $this->players
-            // 'comp_id'=>$this->comp_id,
         ];
     }
 }

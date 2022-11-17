@@ -32,4 +32,3 @@ class LeagueStandingsResource extends JsonResource
         ];
     }
 }
-//'form','matches_played','wins','losses','draws'
