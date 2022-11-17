@@ -14,7 +14,6 @@ class ClubController extends Controller
     public function index()
     {
         $club = Club::all();
-        // return $club;
 
         return  ClubsResource::collection($club);
     }

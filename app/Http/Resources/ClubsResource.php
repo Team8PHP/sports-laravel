@@ -21,9 +21,10 @@ class ClubsResource extends JsonResource
             'club_tla' => $this->tla,
             'club_venue' => $this->venue,
             'club_founded' => $this->founded,
+            'country' => $this->country_name,
+            'country_image' => $this->country_image,
             'competitions' =>  $this->competetion,
             'players' =>  $this->players
-            // 'comp_id'=>$this->comp_id,
         ];
     }
 }
