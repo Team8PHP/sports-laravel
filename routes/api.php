@@ -78,6 +78,9 @@ Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('admin/users', [DashboardController::class,'userIndex']);
     Route::put('admin/users/{id}', [DashboardController::class,'makeAdmin']);
     Route::delete('admin/users/{id}', [DashboardController::class,'deleteUser']);
+    Route::get('admin/news', [DashboardController::class,'newsIndex']);
+    Route::delete('admin/news/{id}', [DashboardController::class,'deletenews']);
+
 });
 
 Route::get('matches/favourites/{userid}/{date}', [FavouritesMatchesController::class,'show']);
