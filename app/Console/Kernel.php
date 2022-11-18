@@ -27,7 +27,7 @@ class Kernel extends ConsoleKernel
         $schedule->job(new UpdateNews())->everyThreeHours();
         $schedule->job(new UpdateLiveMatches())->everyMinute()->withoutOverlapping();
         $schedule->job(new UpdateUpcomingMatches())->daily();
-        $schedule->job(new UpdateLeagueScorersStanding())->hourly();
+        $schedule->job(new UpdateLeagueScorersStanding())->everyFiveMinutes();
     }
 
     /**
