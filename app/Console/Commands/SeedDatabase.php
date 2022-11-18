@@ -29,7 +29,7 @@ class SeedDatabase extends Command
     {
         $leagues=['PL','SA','BL1','PD','FL1'];
         $startDate='2022-08-01';
-        $endDate = date('Y-m-d');
+        $endDate = '2023-06-30';
         echo "Start Seeding \n ";
         foreach ($leagues as $index=>$league) {
             if ($index%2==0) {
