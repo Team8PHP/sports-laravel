@@ -32,7 +32,7 @@ class SeedDatabase extends Command
         $endDate = '2023-06-30';
         echo "Start Seeding \n ";
         foreach ($leagues as $index=>$league) {
-            if ($index%2==0) {
+            if ($index%2==0 && $index!=0) {
                 sleep(60);
                 echo "in sleep  \n";
             }
