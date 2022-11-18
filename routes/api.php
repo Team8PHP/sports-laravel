@@ -63,7 +63,7 @@ Route::post('favourites', [FavouritesController::class,'store']);
 
 Route::delete('favourites/{id}', [FavouritesController::class,'destroy']);
 
-// Route::delete('delete/{user}/{club}', [FavouritesController::class,'destroybyuser']);
+Route::delete('delete/{user}/{club}', [FavouritesController::class,'destroybyuser']);
 
 Route::get('matches/{date}', [MatchesController::class,'show']);
 
