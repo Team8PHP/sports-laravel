@@ -16,7 +16,7 @@ class ClubsResource extends JsonResource
     {
         return [
             'club_name' => $this->name,
-            'club_id' => $this->Id,
+            'club_id' => $this->id,
             'club_image' => $this->image,
             'club_tla' => $this->tla,
             'club_venue' => $this->venue,
