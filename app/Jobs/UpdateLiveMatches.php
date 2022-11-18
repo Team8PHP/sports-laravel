@@ -38,6 +38,6 @@ class UpdateLiveMatches implements ShouldQueue
         foreach ($leagues as $league) {
             seed_matches($league, $date, $date);
         }
-        sleep(30);
+        sleep(60);
     }
 }
