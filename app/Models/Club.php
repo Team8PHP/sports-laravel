@@ -15,6 +15,8 @@ class Club extends Model
         'tla',
         'venue',
         'founded',
+        'country_image',
+        'country_name'
     ];
 
     // public function favourites()
@@ -34,7 +36,7 @@ class Club extends Model
 
     public function players()
     {
-        return $this->hasMany(Player::class,'club_id','id');
+        return $this->hasMany(Player::class, 'club_id', 'id');
     }
 
     public function users()
