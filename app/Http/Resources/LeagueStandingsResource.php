@@ -17,7 +17,7 @@ class LeagueStandingsResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'club_id'=>$this->Id,
+            'club_id'=>$this->id,
             'club_name' => $this->name,
             'club_image' => $this->image,
             'position' => $this->pivot->position,
