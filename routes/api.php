@@ -47,6 +47,8 @@ Route::get('leagues', [LeaguesController::class,'index']);
 
 Route::get('clubs', [ClubController::class,'index']);
 
+Route::get('clubs/search_club', [ClubController::class,'searchClub']);
+
 Route::get('club/{id}', [ClubController::class,'show']);
 
 Route::get('league/{id}', [LeagueStandingsController::class,'show']);
