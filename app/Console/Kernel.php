@@ -7,6 +7,10 @@ use App\Jobs\Leagues_Scorers;
 use App\Jobs\Matches_Filler;
 use App\Jobs\NewsSeeding;
 use App\Jobs\PL;
+use App\Jobs\UpdateLeagueScorersStanding;
+use App\Jobs\UpdateLiveMatches;
+use App\Jobs\UpdateNews;
+use App\Jobs\UpdateUpcomingMatches;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -20,10 +24,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->job(new Leagues());
-        // $schedule->job(new Leagues_Scorers());
-        // $schedule->job(new Matches_Filler());
-        // $schedule->job(new NewsSeeding());
+        $schedule->job(new UpdateNews())->everyThreeHours();
+        $schedule->job(new UpdateLiveMatches())->everyMinute()->withoutOverlapping();
+        $schedule->job(new UpdateUpcomingMatches())->daily();
+        $schedule->job(new UpdateLeagueScorersStanding())->hourly();
     }
 
     /**
