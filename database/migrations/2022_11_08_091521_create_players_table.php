@@ -13,8 +13,8 @@ return new class () extends Migration {
     public function up()
     {
         Schema::create('players', function (Blueprint $table) {
-            $table->unsignedInteger("Id");
-            $table->primary("Id");
+            $table->unsignedInteger("id");
+            $table->primary("id");
             $table->string('name');
             $table->string('nationality');
             $table->unsignedInteger('club_id');

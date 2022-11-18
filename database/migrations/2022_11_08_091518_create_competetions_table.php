@@ -14,7 +14,7 @@ return new class () extends Migration {
     {
         Schema::create('competetions', function (Blueprint $table) {
             $table->unsignedInteger("id");
-            $table->primary("Id");
+            $table->primary("id");
             $table->string('name');
             $table->string('image')->nullable();
             $table->enum('type', ['LEAGUE' , 'LEAGUE_CUP' , 'CUP' , 'PLAYOFFS']);
