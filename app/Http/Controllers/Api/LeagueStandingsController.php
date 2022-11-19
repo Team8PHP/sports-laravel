@@ -15,8 +15,13 @@ class LeagueStandingsController extends Controller
     public function show($id)
     {
         $competition = Competetion::find($id);
-
-        return LeagueStandingsResource::collection($competition->clubs_league);
-
+        $trial = LeagueStandingsResource::collection($competition->clubs_league)->toArray(null);
+        usort($trial, function ($a, $b) {
+            return $a['position'] > $b['position'];
+        });
+        return
+            [
+                "data" => $trial
+            ];
     }
 }

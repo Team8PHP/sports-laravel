@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ClubsResource;
@@ -23,4 +23,13 @@ class ClubController extends Controller
         $club = Club::find($id);
         return new  ClubsResource($club);
     }
+    public function searchClub(Request $request) {
+        $query = Club::query();
+        $data = $request->input('search_club');
+        if($data){
+            $query->whereRaw("name LIKE '%" .$data. "%'");
+        }
+        return $query->get();
+    }
+
 }

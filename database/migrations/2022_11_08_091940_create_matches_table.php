@@ -13,8 +13,8 @@ return new class () extends Migration {
     public function up()
     {
         Schema::create('matches', function (Blueprint $table) {
-            $table->unsignedBigInteger("Id");
-            $table->primary("Id");
+            $table->unsignedBigInteger("id");
+            $table->primary("id");
             $table->unsignedInteger('home_id');
             $table->foreign('home_id')->references('id')->on('clubs');
             $table->unsignedInteger('away_id');

@@ -16,13 +16,13 @@ return new class () extends Migration {
             $table->id();
             $table->string('source');
             $table->string('author');
-            $table->string('title');
-            $table->string('description');
-            $table->string('content');
+            $table->text('title');
+            $table->text('description');
+            $table->text('content');
             $table->date('date');
             $table->string('time');
-            $table->string('url');
-            $table->string('urlToImage');
+            $table->text('url');
+            $table->text('urlToImage');
             $table->timestamps();
         });
     }

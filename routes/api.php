@@ -1,15 +1,15 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\api\ClubController;
+use App\Http\Controllers\Api\ClubController;
 use App\Http\Controllers\Api\CompetitionsController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\FavouritesController;
 use App\Http\Controllers\Api\GroupStandingsController;
 use App\Http\Controllers\Api\LeaguesController;
 use App\Http\Controllers\Api\LeagueStandingsController;
-use App\Http\Controllers\api\LiveController;
-use App\Http\Controllers\api\MatchesController;
+use App\Http\Controllers\Api\LiveController;
+use App\Http\Controllers\Api\MatchesController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\ScorersController;
 use App\Http\Controllers\FavouritesliveController;
@@ -46,6 +46,8 @@ Route::get('auth/facebook/callback', [SocialController::class, 'loginWithFaceboo
 Route::get('leagues', [LeaguesController::class,'index']);
 
 Route::get('clubs', [ClubController::class,'index']);
+
+Route::get('clubs/search_club', [ClubController::class,'searchClub']);
 
 Route::get('club/{id}', [ClubController::class,'show']);
 
